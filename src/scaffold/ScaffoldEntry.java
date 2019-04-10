@@ -25,10 +25,10 @@ public class ScaffoldEntry {
 		// os.done();
 
 		AsyncScaffold as = new AsyncScaffold();
-		as.done();
+		// as.done();
 
 		QuartzScaffold qs = new QuartzScaffold();
-		// qs.done();
+		qs.done();
 
 		LambdaScaffold ls = new LambdaScaffold();
 		// ls.done();
