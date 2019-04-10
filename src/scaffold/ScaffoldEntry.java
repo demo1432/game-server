@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.LoggerContext;
 import org.apache.logging.log4j.core.config.Configuration;
 
-import async.demo.AsyncScaffold3;
+import async.demo.AsyncScaffold2;
 import lambda.demo.LambdaScaffold;
 import observer.demo.ObserverScaffold;
 import quartz.demo.QuartzScaffold;
@@ -33,14 +33,14 @@ public class ScaffoldEntry {
 		ObserverScaffold os = new ObserverScaffold();
 		// os.done();
 
-		AsyncScaffold3 as = new AsyncScaffold3();
-		// as.done();
+		AsyncScaffold2 as = new AsyncScaffold2();
+		as.done();
 
 		QuartzScaffold qs = new QuartzScaffold();
 		// qs.done();
 
 		LambdaScaffold ls = new LambdaScaffold();
-		ls.done();
+		// ls.done();
 
 		logger.info("end");
 	}
