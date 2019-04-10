@@ -43,7 +43,7 @@ public class Subject {
 			return;
 		}
 		for (IObserver ob : obs) {
-			ob.onNotify(ob, code, data);
+			ob.onNotify(code, data);
 		}
 	}
 

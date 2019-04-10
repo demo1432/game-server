@@ -2,6 +2,6 @@ package observer;
 
 public interface IObserver {
 
-	public void onNotify(Object sender, int code, Object data);
+	public void onNotify(int code, Object data);
 
 }

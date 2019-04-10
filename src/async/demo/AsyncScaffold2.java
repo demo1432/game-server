@@ -5,8 +5,9 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import scaffold.LogTool;
 
 /**
  * CountDownLatch的使用方法
@@ -18,8 +19,8 @@ public class AsyncScaffold2 {
 
 	// 构建异步调用
 	public void done() {
-		Logger logger = LogManager.getLogger(Thread.currentThread().getStackTrace()[1].getClassName());
-
+		Logger logger = LogTool.getInstance().getLogger();
+		
 		logger.info("async start");
 
 		CountDownLatch cdl = new CountDownLatch(2);

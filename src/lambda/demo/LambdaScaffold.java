@@ -4,13 +4,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 
-import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import scaffold.LogTool;
 
 public class LambdaScaffold {
 
 	public void done() {
-		Logger logger = LogManager.getLogger(Thread.currentThread().getStackTrace()[1].getClassName());
+		Logger logger = LogTool.getInstance().getLogger();
+
 		logger.info(() -> {
 			return 0;
 		});

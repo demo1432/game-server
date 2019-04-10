@@ -1,12 +1,8 @@
 package scaffold;
 
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.core.LoggerContext;
-import org.apache.logging.log4j.core.config.Configuration;
 
-import async.demo.AsyncScaffold2;
+import async.demo.AsyncScaffold;
 import lambda.demo.LambdaScaffold;
 import observer.demo.ObserverScaffold;
 import quartz.demo.QuartzScaffold;
@@ -21,19 +17,14 @@ import quartz.demo.QuartzScaffold;
 public class ScaffoldEntry {
 
 	public static void main(String[] args) {
-		// 更新记录级别
-		LoggerContext ctx = (LoggerContext) LogManager.getContext(false);
-		Configuration conf = ctx.getConfiguration();
-		conf.getLoggerConfig(LogManager.ROOT_LOGGER_NAME).setLevel(Level.INFO);
-		ctx.updateLoggers(conf);
-
-		Logger logger = LogManager.getLogger(Thread.currentThread().getStackTrace()[1].getClassName());
-		logger.info("start");
+		LogTool.getInstance().config();
+		Logger logger = LogTool.getInstance().getLogger();
+		logger.info("=========================================");
 
 		ObserverScaffold os = new ObserverScaffold();
 		// os.done();
 
-		AsyncScaffold2 as = new AsyncScaffold2();
+		AsyncScaffold as = new AsyncScaffold();
 		as.done();
 
 		QuartzScaffold qs = new QuartzScaffold();
@@ -42,7 +33,7 @@ public class ScaffoldEntry {
 		LambdaScaffold ls = new LambdaScaffold();
 		// ls.done();
 
-		logger.info("end");
+		logger.info("=========================================");
 	}
 
 }

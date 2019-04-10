@@ -2,7 +2,6 @@ package quartz.demo;
 
 import java.util.Date;
 
-import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.quartz.DateBuilder;
 import org.quartz.JobBuilder;
@@ -15,11 +14,13 @@ import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.quartz.impl.StdSchedulerFactory;
 
+import scaffold.LogTool;
+
 public class QuartzScaffold {
 
-	public void done() {
-		Logger logger = LogManager.getLogger(Thread.currentThread().getStackTrace()[1].getClassName());
+	private Logger logger = LogTool.getInstance().getLogger();
 
+	public void done() {
 		try {
 			// 创建一个调度器工厂
 			SchedulerFactory factory = new StdSchedulerFactory();
@@ -43,7 +44,7 @@ public class QuartzScaffold {
 			Scheduler scheduler = factory.getScheduler();
 			// 绑定触发器和任务
 			scheduler.scheduleJob(jobDetail, trigger);
-			System.out.println(jobDetail.getKey() + " 运行在: " + runTime);
+			logger.info(jobDetail.getKey() + " 运行在: " + runTime);
 			scheduler.start();
 		} catch (SchedulerException e) {
 			// TODO Auto-generated catch block

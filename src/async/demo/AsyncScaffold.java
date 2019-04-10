@@ -1,15 +1,14 @@
 package async.demo;
 
-import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import async.AsyncTool;
+import scaffold.LogTool;
 
 public class AsyncScaffold {
 
-	// 构建异步调用
 	public void done() {
-		Logger logger = LogManager.getLogger(Thread.currentThread().getStackTrace()[1].getClassName());
+		Logger logger = LogTool.getInstance().getLogger();
 
 		logger.info("async start");
 
