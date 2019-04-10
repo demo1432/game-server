@@ -3,18 +3,19 @@
 	<Appenders>
 		<Console name="Console" target="SYSTEM_OUT">
 			<PatternLayout
-				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+				pattern="%-5level [%t] %logger{36} %d{HH:mm:ss.SSS} - %msg%n" />
 		</Console>
 		<!--文件会打印出所有信息，这个log每次运行程序会自动清空，由append属性决定，这个也挺有用的，适合临时测试用 -->
-		<File name="File" fileName="log/test.log" append="false">
-			<PatternLayout pattern="%d{HH:mm:ss.SSS} - %msg%n" />
-			<!--<PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level [%t] %class{36}.%M 
-				%L - %msg%n" /> -->
+		<File name="File" fileName="log/demo_java.log" append="true">
+			<!--<PatternLayout pattern="%d{HH:mm:ss.SSS} - %msg%n" /> -->
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} %-5level [%t] %class{36}.%M 
+				%L - %msg%n" />
 		</File>
 	</Appenders>
 	<Loggers>
 		<Root level="trace">
-			<!--<AppenderRef ref="Console" /> -->
+			<AppenderRef ref="Console" />
 			<AppenderRef ref="File" />
 		</Root>
 	</Loggers>
