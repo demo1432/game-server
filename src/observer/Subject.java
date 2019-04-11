@@ -19,6 +19,7 @@ public class Subject {
 			obs = new Vector<IObserver>();
 			obs.add(ob);
 			observersMap.put(code, obs);
+			return;
 		}
 
 		if (!obs.contains(ob)) {
@@ -42,6 +43,7 @@ public class Subject {
 		if (obs == null) {
 			return;
 		}
+		
 		for (IObserver ob : obs) {
 			ob.onNotify(code, data);
 		}
