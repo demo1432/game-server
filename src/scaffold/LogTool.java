@@ -15,7 +15,7 @@ import org.apache.logging.log4j.core.config.Configuration;
  */
 public class LogTool {
 
-	public static LogTool instance = new LogTool();
+	private static LogTool instance = new LogTool();
 
 	public static LogTool getInstance() {
 		return instance;

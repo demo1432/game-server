@@ -5,9 +5,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class Subject {
 
-	public static Subject instance = new Subject();
+	private static Subject instance = new Subject();
 
-	public ConcurrentHashMap<Integer, Vector<IObserver>> observersMap = new ConcurrentHashMap<Integer, Vector<IObserver>>();
+	private ConcurrentHashMap<Integer, Vector<IObserver>> observersMap = new ConcurrentHashMap<Integer, Vector<IObserver>>();
 
 	public static Subject getInstance() {
 		return instance;

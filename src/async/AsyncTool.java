@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class AsyncTool {
 
-	public static AsyncTool instance = new AsyncTool();
+	private static AsyncTool instance = new AsyncTool();
 
 	// 线程池，专门开放一个线程用来做异步处理，用完后不关闭
 	ExecutorService executor = Executors.newFixedThreadPool(1);

@@ -19,7 +19,8 @@ public class ScaffoldEntry {
 	public static void main(String[] args) {
 		LogTool.getInstance().config();
 		Logger logger = LogTool.getInstance().getLogger();
-		logger.info("=========================================");
+		
+		logger.info("================= main start ========================");
 
 		ObserverScaffold os = new ObserverScaffold();
 		// os.done();
@@ -33,7 +34,7 @@ public class ScaffoldEntry {
 		LambdaScaffold ls = new LambdaScaffold();
 		// ls.done();
 
-		logger.info("=========================================");
+		logger.info("================= main   end ========================");
 	}
 
 }
